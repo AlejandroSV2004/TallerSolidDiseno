@@ -8,15 +8,14 @@ package ec.edu.espol.tallersolid;
  *
  * @author aleja
  */
-public class Notificacion {
-    private int tipoNotificacion;
-    public void notificar(Pago pago){
-        if(tipoNotificacion==1){
-            //enviarEmail();
-        }
-        else{
-            //enviarSMS();
-        }
-    }
+//notificacion deja de ser clase y se convierte en interfaz
+public interface Notificacion {
+/*
+    En la clase Notificación, se identifica una violación al principio Open/Close.
+    Si se agrega otro tipo de notificación, el método notificar debería modificarse
+    nuevamente para añadir a las condiciones el nuevo tipo.
+    Solución: Convertir a interfaz a la clase Notificación. Crear nuevas clases de
+    cada tipo de notificación independientemente que implementen la interfaz Notificación.
+    */
+     public abstract void notificar(Pago pago);
 }
-
